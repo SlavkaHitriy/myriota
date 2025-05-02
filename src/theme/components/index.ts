@@ -1,7 +1,6 @@
 export { MuiButton } from './MuiButton';
 export { MuiCssBaseline } from './MuiCssBaseline';
 export { MuiChip } from './MuiChip';
-export { MuiDataGrid } from './MuiDataGrid';
 export { MuiTextField } from './MuiTextField';
 export { MuiIconButton } from './MuiIconButton';
 export { MuiPaper } from './MuiPaper';
