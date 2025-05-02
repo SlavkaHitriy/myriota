@@ -78,7 +78,16 @@ export const RigView = () => {
           </Stack>
         ))}
       </Stack>
-      <Stack direction={'row'} flex={1} position={'relative'}>
+      <Stack
+        direction={'row'}
+        flex={1}
+        position={'relative'}
+        sx={{
+          ...(activeTab === 'map-view' && {
+            overflow: 'hidden'
+          })
+        }}
+      >
         <Stack width={'316px'} flexShrink={0} direction={'row'} gap={'28px'}>
           <IconButton color={'primary'}>
             <ArrowIcon />
@@ -148,14 +157,17 @@ export const RigView = () => {
           ml={'64px'}
           gap={'24px'}
           sx={{
-            position: 'absolute',
-            right: 0,
-            width: '70%',
-            height: '110%',
-            bottom: 0
+            flex: 1,
+            ...(activeTab === 'rig' && {
+              position: 'absolute',
+              right: 0,
+              bottom: 0,
+              width: '70%',
+              height: '110%'
+            })
           }}
         >
-          <Slider withMaps={activeTab === 'map-view'} />
+          <Slider withMaps={activeTab !== 'rig'} />
         </Stack>
       </Stack>
       <Stack mt={'16px'} direction={'row'} gap={'12px'} width={'100%'}>

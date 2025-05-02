@@ -1,6 +1,7 @@
 import { Box, Stack } from '@mui/material';
 import { Link, Outlet } from 'react-router';
 import logo from '@assets/images/logo.png';
+import logoSignaltracks from '@assets/images/logo.svg?url';
 
 export const MainLayout = () => {
   return (
@@ -15,13 +16,39 @@ export const MainLayout = () => {
     >
       <Box
         sx={{
-          position: 'absolute',
-          width: '64px',
-          height: '64px'
+          position: 'absolute'
         }}
       >
         <Link to={'/'}>
-          <Box width={'100%'} height={'100%'} component={'img'} src={logo} alt={'logo'} />
+          <Box
+            width={'125px'}
+            height={'24px'}
+            sx={{
+              objectFit: 'contain'
+            }}
+            component={'img'}
+            src={logoSignaltracks}
+            alt={'logo'}
+          />
+        </Link>
+      </Box>
+      <Box
+        sx={{
+          position: 'absolute',
+          right: 24
+        }}
+      >
+        <Link to={'/'}>
+          <Box
+            width={'48px'}
+            height={'48px'}
+            sx={{
+              objectFit: 'contain'
+            }}
+            component={'img'}
+            src={logo}
+            alt={'logo'}
+          />
         </Link>
       </Box>
       <Stack flex={1} overflow={'hidden'}>
