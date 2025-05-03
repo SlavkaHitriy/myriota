@@ -3,7 +3,7 @@ import type { ThemeOptions } from '@mui/material';
 export const palette: NonNullable<ThemeOptions['palette']> = {
   accents: {
     blue: '#1E75FF',
-    darkBlue: '#677AF0',
+    darkBlue: '#115ee0',
     green: '#27B270',
     lightGreen: '#A6EC99',
     orange: '#F2A93B',

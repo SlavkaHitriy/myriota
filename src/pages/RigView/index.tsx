@@ -10,8 +10,9 @@ import { InlineSteps } from '@components/InlineSteps';
 import { CircleProgress } from '@components/CircleProgress';
 import { LinearProgress } from '@components/LinearProgress';
 import { Slider } from '@pages/RigView/components/Slider';
+import { useNavigate } from 'react-router';
 
-type TTabView = 'rig' | 'map-view' | 'summary';
+type TTabView = 'rig' | 'map-view' | 'management';
 
 interface ITab {
   id: TTabView;
@@ -31,16 +32,18 @@ const tabs: ITab[] = [
     icon: <MapViewIcon />
   },
   {
-    id: 'summary',
-    label: 'Summary',
+    id: 'management',
+    label: 'Management',
     icon: <SummaryIcon />
   }
 ];
 
 export const RigView = () => {
   const [activeTab, setActiveTab] = useState<TTabView>('rig');
+  const navigate = useNavigate();
 
   const handleTabChange = (tab: TTabView) => {
+    if (tab === 'management') return navigate('/management');
     setActiveTab(tab);
   };
 
